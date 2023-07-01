@@ -2,7 +2,7 @@ import React from 'react';
 import jwtDecode from "jwt-decode";
 import { Route, Routes } from "react-router-dom";
 import { CookiesProvider, useCookies } from "react-cookie";
-import Login from './Components/Login/Login';
+import HomePage from './Components/HomePage/HomePage';
 
 export const CookiesContext = React.createContext({});
 
@@ -42,7 +42,7 @@ const App = () => {
       }}
       >
         <Routes>
-          <Route path="/" element={<Login/>}/>
+          <Route path="/" element={<HomePage/>}/>
         </Routes>
       </CookiesContext.Provider>
     </CookiesProvider>
