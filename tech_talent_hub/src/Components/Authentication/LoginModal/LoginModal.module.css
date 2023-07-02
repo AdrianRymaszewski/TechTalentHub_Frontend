@@ -1,0 +1,20 @@
+.login_modal{
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    width: 40%;
+    height: 70%;
+    z-index: 1000;
+    border-radius: 20px;
+    animation-duration: 0.2s;
+    animation-name: sizing;
+    background-color: #f0f0f0;
+    box-shadow: #1f1f1f 3px 3px 10px 3px;
+    border: gray 2px solid !important;
+}
+@keyframes sizing 
+{
+    0% {scale: 0;}
+    50% {scale: 1.1;}   
+    100% {scale: 1;}   
+}

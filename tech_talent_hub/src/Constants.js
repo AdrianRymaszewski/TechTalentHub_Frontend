@@ -1,0 +1,1 @@
+export const LOGIN_URL = 'https://techtalenthubapi-v2.azurewebsites.net/api/Account/login';
