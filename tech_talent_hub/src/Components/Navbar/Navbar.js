@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { authSliceActions } from "../../Store/authSlice";
 import PageWrapper from "../BasicComponents/PageWrapper/PageWrapper";
 import LoginModal from "../Authentication/LoginModal/LoginModal";
+import RegisterModal from "../Authentication/RegisterModal/RegisterModal";
 
 const midLinks = [
     { title: 'Jobs', path: '/jobs' },
@@ -36,7 +37,7 @@ const Navbar = () => {
 
     const rightLinks = [
         { title: 'login', onClick:()=>dispatch(authSliceActions.triggerLoginModal(!isLoginModalOpen)) },
-        { title: 'register', onClick:()=>dispatch(authSliceActions.triggerRegisterModal(!isRegisterModalOpen)) },
+        { title: 'Sign up', onClick:()=>dispatch(authSliceActions.triggerRegisterModal(!isRegisterModalOpen)) },
     ]
 
     return (
@@ -78,7 +79,8 @@ const Navbar = () => {
                         </Grid>
                     </Grid>
                 </Grid>
-            {isLoginModalOpen && <LoginModal/>}  
+            {isLoginModalOpen && <LoginModal/>}
+            {isRegisterModalOpen && <RegisterModal/>}
         </>
     )
 }

@@ -3,22 +3,21 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialAuthSlice = {
     isLoginModalOpen:false,
     isRegisterModalOpen:false,
-    isAuthenticated: false,
-    userData:{email:'', password:''}
+    userData:{
+        login:{email:'', password:''},
+        register:{email:'', password:'', firstName:'', lastName:''}
+    }
 }
 
 const authSlice = createSlice({
     name:'authentication',
     initialState:initialAuthSlice,
     reducers:{
-        login(state){
-            state.isAuthenticated = true;
+        updateLoginUserData(state, action){
+            state.userData.login = action.payload;
         },
-        logout(state){
-            state.isAuthenticated = false;
-        },
-        updateUserData(state, action){
-            state.userData = action.payload;
+        updateRegisterUserData(state, action){
+            state.userData.register = action.payload;
         },
         triggerLoginModal(state, action){
             state.isLoginModalOpen = action.payload;

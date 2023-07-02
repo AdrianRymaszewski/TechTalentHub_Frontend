@@ -11,9 +11,8 @@ import { LOGIN_URL } from "../../../Constants";
 const LoginModal = () =>{
 
     const dispatch = useDispatch();
-    const isLoggedIn = useSelector((state) => state.auth.isAuthenticated)
-    const email = useSelector((state) => state.auth.userData.email)
-    const password = useSelector((state) => state.auth.userData.password)
+    const email = useSelector((state) => state.auth.userData.login.email)
+    const password = useSelector((state) => state.auth.userData.login.password)
 
     const {loading:loginLoading, error:loginError, sendRequest:loginFetch} = useFetch();
     
@@ -30,10 +29,10 @@ const LoginModal = () =>{
         loginResponse)
     }
     const emailChangeHandler = (value) =>{
-        dispatch(authSliceActions.updateUserData({email:value, password:password}))
+        dispatch(authSliceActions.updateLoginUserData({email:value, password:password}))
     }
     const passwordChangeHandler = (value) =>{
-        dispatch(authSliceActions.updateUserData({email:email, password:value}))
+        dispatch(authSliceActions.updateLoginUserData({email:email, password:value}))
     }
 
 
