@@ -9,12 +9,21 @@ const HomePage = ()=>{
     const isModalOpen = useSelector(state=>state.auth.isModalOpen)
     
 
+    const increment = () => {
+        dispatch(counterSliceActions.increment());
+    }
+    const decrement = () => {
+        dispatch(counterSliceActions.decrement());
+    }
+    const incrementBy = () => {
+        dispatch(counterSliceActions.incrementBy(5));
+    }
     return(
         <>
             <Grid container justifyContent={'center'} mt={10}>
                 <Button onClick={()=>dispatch(authSliceActions.triggerModal(!isModalOpen))} variant={1} value={'Trigger Modal'}/>
             </Grid>
-            {isModalOpen && <LoginModal/>}
+            {isModalOpen && <LoginModal/>}  
         </>
     )
 }
