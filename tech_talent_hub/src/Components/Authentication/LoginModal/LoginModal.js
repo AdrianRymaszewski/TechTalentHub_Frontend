@@ -38,7 +38,7 @@ const LoginModal = () =>{
 
 
     const closeModal=() =>{
-        dispatch(authSliceActions.triggerModal(false))
+        dispatch(authSliceActions.triggerLoginModal(false))
     }
 
     return(

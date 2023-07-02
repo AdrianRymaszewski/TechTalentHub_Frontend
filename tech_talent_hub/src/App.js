@@ -3,6 +3,8 @@ import jwtDecode from "jwt-decode";
 import { Route, Routes } from "react-router-dom";
 import { CookiesProvider, useCookies } from "react-cookie";
 import HomePage from './Components/HomePage/HomePage';
+import Navbar from './Components/Navbar/Navbar'
+import PageWrapper from './Components/BasicComponents/PageWrapper/PageWrapper';
 
 export const CookiesContext = React.createContext({});
 
@@ -41,8 +43,9 @@ const App = () => {
         DecodeToken,
       }}
       >
+        <Navbar/>
         <Routes>
-          <Route path="/" element={<HomePage/>}/>
+          <Route path="/" element={<PageWrapper><HomePage/></PageWrapper>}/>
         </Routes>
       </CookiesContext.Provider>
     </CookiesProvider>

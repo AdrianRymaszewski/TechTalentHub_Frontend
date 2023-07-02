@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialAuthSlice = {
-    isModalOpen:false,
+    isLoginModalOpen:false,
+    isRegisterModalOpen:false,
     isAuthenticated: false,
     userData:{email:'', password:''}
 }
@@ -19,8 +20,11 @@ const authSlice = createSlice({
         updateUserData(state, action){
             state.userData = action.payload;
         },
-        triggerModal(state, action){
-            state.isModalOpen = action.payload;
+        triggerLoginModal(state, action){
+            state.isLoginModalOpen = action.payload;
+        },
+        triggerRegisterModal(state, action){
+            state.isRegisterModalOpen = action.payload;
         }
     }
 })
