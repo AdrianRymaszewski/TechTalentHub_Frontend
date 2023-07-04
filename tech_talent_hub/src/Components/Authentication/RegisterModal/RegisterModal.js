@@ -7,6 +7,7 @@ import useFetch from '../../../Hooks/use-fetch';
 import Button from '../../BasicComponents/Button/Button';
 import styles from './RegisterModal.module.css';
 import { REGISTER_URL } from "../../../Constants";
+import {AiOutlineCloseCircle} from 'react-icons/ai'
 
 const RegisterModal = () =>{
 
@@ -52,8 +53,9 @@ const RegisterModal = () =>{
         <>
             {createPortal(
                 <div className={styles.register_modal}>
+                                        <Grid container justifyContent={'flex-end'} pr={2} pt={2}><AiOutlineCloseCircle className='close_modal_icon' size={40} onClick={closeModal}/></Grid>
                     <Grid container justifyContent={'center'} alignItems={'center'} mt={10}>
-                        <Typography fontSize={40}>Sign up</Typography>
+                        <Typography fontSize={40} mb={5}>Sign up</Typography>
                         <Grid container item xs={12} justifyContent={'center'}>
                             <Grid container item justifyContent={'center'} mt={2} xs={6}>
                                 <Grid container justifyContent={'right'} alignItems={'center'} item xs={6} pr={3}><Typography fontSize={30}>Email :</Typography></Grid>

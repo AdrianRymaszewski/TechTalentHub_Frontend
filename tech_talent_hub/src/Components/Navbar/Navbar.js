@@ -1,11 +1,10 @@
 import { AppBar, Box, Container, Grid, List, ListItem, Toolbar } from "@mui/material";
 import logo from "../../Images/logo2.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "../BasicComponents/Button/Button";
 import { mainColor } from "../../Constants";
 import { useDispatch, useSelector } from "react-redux";
 import { authSliceActions } from "../../Store/authSlice";
-import PageWrapper from "../BasicComponents/PageWrapper/PageWrapper";
 import LoginModal from "../Authentication/LoginModal/LoginModal";
 import RegisterModal from "../Authentication/RegisterModal/RegisterModal";
 
@@ -40,13 +39,16 @@ const Navbar = () => {
         { title: 'Sign up', onClick:()=>dispatch(authSliceActions.triggerRegisterModal(!isRegisterModalOpen)) },
     ]
 
+
+    const navigate = useNavigate();
+
     return (
         <>
                 <Grid container sx={{backgroundColor:mainColor}} justifyContent={'center'} alignItems={'center'}>
                     <Grid container item justifyContent={'space-between'} alignItems={'center'} m={1} xs={11}>
 
                         <Grid item>
-                            <img src={logo} alt="" />
+                            <img src={logo} alt="" onClick={()=>navigate('/')} style={{cursor:'pointer'}}/>
                         </Grid>
                         
                         <Grid item>
